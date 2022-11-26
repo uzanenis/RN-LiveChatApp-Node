@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema({
-    username:{
+    name:{
         type:String,
-        required: true
+        required: true,
+        trim: true
+
+    },
+    lastname:{
+        type:String,
+        required: true,
+        trim: true
     },
     email: {
         type: String,
@@ -25,7 +32,7 @@ const userSchema = mongoose.Schema({
     avatarImage:{
         type: String,
         default: ""
-    }
+    },
 })
 
 export default mongoose.model('User', userSchema)
